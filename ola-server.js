@@ -18,3 +18,4 @@ http.createServer((requisicao, resposta) => {
 }).listen(porta, ip)
 
 console.log(`Servidor web executando em http://${ip}:${porta}`)
+//console.log(typeof(http))

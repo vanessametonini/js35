@@ -1,0 +1,22 @@
+{
+  "name": "casadocodigo",
+  "version": "1.0.0",
+  "description": "curso js-35 node express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/vanessametonini/js35.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanessametonini/js35/issues"
+  },
+  "homepage": "https://github.com/vanessametonini/js35#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
