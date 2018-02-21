@@ -13,7 +13,13 @@ module.exports = app => {
         connection.query(
             `SELECT * FROM livros`
             , (erro, resultados, campos) => {
-                resposta.send(resultados)
+                //resposta.send(resultados)
+                resposta.render(
+                    `produtos/lista`
+                    , {
+                        livros: resultados
+                    }
+                )
             }
         )
 
