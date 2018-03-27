@@ -1,14 +1,14 @@
-let connectionFactory = require('../infra/connectionFactory')
+let connectionFactory = require('../infra/connectionFactory'),
+    produtos = require('../infra/produtos')
 
 module.exports = app => {
     app.get('/produtos',(requisicao, resposta) => {
          
         let conexao = connectionFactory()
+        , produtosNoBanco = produtos(conexao)
 
-        conexao.query(
-            `SELECT * FROM livros`
-            , (erro, resultados, campos) => {
-                //resposta.send(resultados)
+        produtosNoBanco.lista(
+            (erro, resultados, campos) => {
                 resposta.render(
                     `produtos/lista`
                     , {
