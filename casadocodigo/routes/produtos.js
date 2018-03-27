@@ -1,16 +1,11 @@
+let connectionFactory = require('../infra/connectionFactory')
+
 module.exports = app => {
     app.get('/produtos',(requisicao, resposta) => {
- 
-        const mysql = require('mysql')
+         
+        let conexao = connectionFactory()
 
-        let connection = mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'casadocodigo'
-        })
-
-        connection.query(
+        conexao.query(
             `SELECT * FROM livros`
             , (erro, resultados, campos) => {
                 //resposta.send(resultados)
@@ -23,7 +18,7 @@ module.exports = app => {
             }
         )
 
-        connection.end()
+        conexao.end()
 
     })
 }
